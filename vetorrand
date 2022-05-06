@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void main()
+{
+int a,b,c,TAM,menor,segmenor;
+menor = segmenor = 21;
+    printf(" qual o tamanho do vetor: "); scanf("%i", &TAM); //pede o tamanho do vetor, ou seja o numero de seus elementos
+    int VETMACRO[TAM];  //cria vetor com o tamanho dado
+    srand(time(NULL) );
+    for( a = 0; a < TAM; a++){
+        VETMACRO[a] = rand()%20;  //atribui valores aos elementos do vetor
+     if( menor > VETMACRO[a]){
+        menor = VETMACRO[a];  //acha o menor vetor atribuido
+    }
+     if( segmenor > VETMACRO[a] && VETMACRO[a] > menor ){
+         segmenor = VETMACRO[a];   //acha o segundo menor vetor
+     }
+    }
+    printf( "os valores do vetor são: ");
+    for( a = 0; a < TAM; a++){
+      printf("  %i", VETMACRO[a]);  //imprime todos os valores
+    }
+    printf(" \n o menor valor é de: %i ", menor);  //imprime o menor valor
+    printf(" \n o segundo menor valor é de: %i ", segmenor);  //imprime segundo menor valor
+
+
+}
